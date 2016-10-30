@@ -16,13 +16,15 @@ module.exports = {
   module: {
     loaders: [
         { test: /\.pug$/, loader: 'pug' },
-        { test: /\.styl$/, loader: ExtractTextPlugin.extract('!css!stylus') }        
+        { test: /\.styl$/, loader: ExtractTextPlugin.extract('!css!stylus') },
+        { test: /\.(svg|ttf|eot|woff|woff2)$/, loader: 'file?name=[path][name].[ext]' }
     ]
   },
     plugins: [
         new NpmInstallPlugin(),
         new HtmlWebpackPlugin({template: "index.pug"}),
         new ExtractTextPlugin('[name].css', {allChunks: true}),
+        
 
     ],
 
