@@ -1,0 +1,26 @@
+@require "../mixins/circular-background.styl"
+
+.title
+  display flex
+  align-items center
+  margin-left 120px
+  
+  &__icon-box    
+    display flex
+    flex-direction column
+    justify-content center 
+    circular-background(129px, 5px, 2px)
+    
+
+  &__text
+    color cv-theme-color
+    font-size 82.3px
+    text-transform uppercase
+    margin 0 20px
+  &__line
+    flex 1    
+    background-color mariner
+    height 5px
+    width 100%
+    
+   

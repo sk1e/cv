@@ -1,0 +1,36 @@
+@import 'sprite.styl'
+@import 'colors.styl'
+@import './mixins/circular-background.styl'
+
+
+.icon-box
+  display flex
+  flex-direction column
+  justify-content center 
+  circular-background(129px, 5px, 2px)
+  
+
+icon(name)
+  sprite(name)
+  margin auto
+
+.profile-icon
+  icon($user)
+          
+.contacts-icon
+  icon($phone)
+
+.skills-icon
+  icon($lamp)
+
+.education-icon
+  icon($star)
+   
+.experience-icon
+  icon($case)
+
+.software-icon
+  icon($computer)
+
+  
+

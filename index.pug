@@ -1,4 +1,7 @@
 doctype html
+
+include ./blocks/title.pug
+
 html(lang="en")
   head
   body
@@ -9,6 +12,7 @@ html(lang="en")
           .author__name name here
           .author__surname surname
           .author__profession graphic designer
+        +title("profile")
       .cv__column
         
     

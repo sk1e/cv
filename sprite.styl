@@ -1,0 +1,151 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$case_name = 'case';
+$case_x = 175px;
+$case_y = 0px;
+$case_offset_x = -175px;
+$case_offset_y = 0px;
+$case_width = 79px;
+$case_height = 75px;
+$case_total_width = 254px;
+$case_total_height = 249px;
+$case_image = 'sprite.png';
+$case = 175px 0px -175px 0px 79px 75px 254px 249px 'sprite.png' 'case';
+$computer_name = 'computer';
+$computer_x = 0px;
+$computer_y = 182px;
+$computer_offset_x = 0px;
+$computer_offset_y = -182px;
+$computer_width = 88px;
+$computer_height = 67px;
+$computer_total_width = 254px;
+$computer_total_height = 249px;
+$computer_image = 'sprite.png';
+$computer = 0px 182px 0px -182px 88px 67px 254px 249px 'sprite.png' 'computer';
+$lamp_name = 'lamp';
+$lamp_x = 0px;
+$lamp_y = 90px;
+$lamp_offset_x = 0px;
+$lamp_offset_y = -90px;
+$lamp_width = 73px;
+$lamp_height = 92px;
+$lamp_total_width = 254px;
+$lamp_total_height = 249px;
+$lamp_image = 'sprite.png';
+$lamp = 0px 90px 0px -90px 73px 92px 254px 249px 'sprite.png' 'lamp';
+$phone_name = 'phone';
+$phone_x = 97px;
+$phone_y = 0px;
+$phone_offset_x = -97px;
+$phone_offset_y = 0px;
+$phone_width = 78px;
+$phone_height = 78px;
+$phone_total_width = 254px;
+$phone_total_height = 249px;
+$phone_image = 'sprite.png';
+$phone = 97px 0px -97px 0px 78px 78px 254px 249px 'sprite.png' 'phone';
+$star_name = 'star';
+$star_x = 0px;
+$star_y = 0px;
+$star_offset_x = 0px;
+$star_offset_y = 0px;
+$star_width = 97px;
+$star_height = 90px;
+$star_total_width = 254px;
+$star_total_height = 249px;
+$star_image = 'sprite.png';
+$star = 0px 0px 0px 0px 97px 90px 254px 249px 'sprite.png' 'star';
+$user_name = 'user';
+$user_x = 175px;
+$user_y = 75px;
+$user_offset_x = -175px;
+$user_offset_y = -75px;
+$user_width = 66px;
+$user_height = 61px;
+$user_total_width = 254px;
+$user_total_height = 249px;
+$user_image = 'sprite.png';
+$user = 175px 75px -175px -75px 66px 61px 254px 249px 'sprite.png' 'user';
+$spritesheet_width = 254px;
+$spritesheet_height = 249px;
+$spritesheet_image = 'sprite.png';
+$spritesheet_sprites = $case $computer $lamp $phone $star $user;
+$spritesheet = 254px 249px 'sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}
