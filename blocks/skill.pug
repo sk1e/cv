@@ -1,0 +1,8 @@
+include ./circle-progress.pug
+
+mixin skill(name, value)
+  .skill
+    .skill__name= name
+    div
+      +circle-progress(value, 12)
+

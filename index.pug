@@ -1,12 +1,12 @@
 doctype html
 
 include ./blocks/title.pug
-
+include ./blocks/skill.pug
 html(lang="en")
   head
   body
     article.cv
-      .cv__column
+      .cv__column.cv__column_left
         .photo
         .author        
           .author__name name here
@@ -14,41 +14,46 @@ html(lang="en")
           .author__profession graphic designer          
         section.section
           +title("profile")
-          p
-           | Lorem ipsum dolor sit amet, consectetuer adipiscing
-           | elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-           | msociis natoque penatibus et magnis dis parturient montes,
-           | nascetur ridiculus mus. Donec quam felis, ultricies nec,
-           | pellentesque eu, pretium quis, sem. Nulla consequat massa
-           | quis enim. Donec pede justo, fringilla vel, aliquet nec,
-           | vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-           | a, venenatis vitae, justo. Nullam dictum felis eu 
-           b 
-             | pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-             | elementum semper nisi. Aenean vulputate eleifend
-             | tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-             | eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
-             | quis, feugiat a, tellus. Phasellus viverra nulla ut metus
-             | varius laoreet. Quisque rutrum.
+          .section__body
+            p
+             | Lorem ipsum dolor sit amet, consectetuer adipiscing
+             | elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+             | msociis natoque penatibus et magnis dis parturient montes,
+             | nascetur ridiculus mus. Donec quam felis, ultricies nec,
+             | pellentesque eu, pretium quis, sem. Nulla consequat massa
+             | quis enim. Donec pede justo, fringilla vel, aliquet nec,
+             | vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+             | a, venenatis vitae, justo. Nullam dictum felis eu 
+             b 
+               | pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+               | elementum semper nisi. Aenean vulputate eleifend
+               | tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+               | eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
+               | quis, feugiat a, tellus. Phasellus viverra nulla ut metus
+               | varius laoreet. Quisque rutrum.
         section.section
           +title("contact")
-          table.contact-table
-            tr
-              th.contact-table__header Address
-              td.contact-table__cell Main Street, City.
-            tr
-              th.contact-table__header e-mail
-              td.contact-table__cell contact@domain.com
-            tr
-              th.contact-table__header phone
-              td.contact-table__cell 555-555-555
-            tr
-              th.contact-table__header website
-              td.contact-table__cell www.yourweb.com
-
-          
-    
-    
-   
-   
-   
+          .section__body
+            table.contact-table
+              tr
+                th.contact-table__header Address
+                td.contact-table__cell Main Street, City.
+              tr
+                th.contact-table__header e-mail
+                td.contact-table__cell contact@domain.com
+              tr
+                th.contact-table__header phone
+                td.contact-table__cell 555-555-555
+              tr
+                th.contact-table__header website
+                td.contact-table__cell www.yourweb.com
+        section.section
+          +title("skills")
+          .section__body
+            +skill("creative", 9)
+            +skill("teamwork", 11)
+            +skill("innovate", 6)
+            +skill("communication", 11)
+      .cv__column.cv__column_right
+        section.section
+          +title("education")

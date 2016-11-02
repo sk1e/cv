@@ -1,0 +1,17 @@
+mixin circle-progress(value, max)
+  - const assert = require("assert")
+  - assert(value <= max, "bad progress value")
+  - for (var i = 0; i < value; i++)  
+      .circle-progress__element.circle-progress__element_active      
+  - for (var i = value; i < max; i++)
+      .circle-progress__element.circle-progress__element_inactive
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
