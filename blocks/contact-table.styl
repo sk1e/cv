@@ -1,14 +1,20 @@
 @require "../colors.styl"
 
 .contact-table
-  margin-top 20px
   font-size 33px
-  
-.contact-table__header  
-  color cv-theme-color
-  padding 0 80px 80px 0
-  text-transform uppercase
-  text-align left
-  
-.contact-table__cell
-  padding-bottom 80px
+  border-collapse collapse
+
+  &__row
+    padding-bottom 45px
+    &:last-child
+      padding-bottom 0
+
+  &__header 
+    padding-bottom inherit
+    padding-right 80px
+    color cv-theme-color
+    text-transform uppercase
+    text-align left  
+
+  &__cell
+    padding-bottom inherit
