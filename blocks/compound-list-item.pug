@@ -1,0 +1,14 @@
+mixin compound-list-item(title, date, subtitle)
+  li.compound-list-item
+    .compound-list-item__marker
+    div
+      if attributes.title_class    
+        span.compound-list-item__title(class!=attributes.title_class)= title
+      else
+        span.compound-list-item__title= title
+      span.compound-list-item__date // #{date}
+      div.compound-list-item__subtitle= subtitle
+      .compound-list-item__body
+        block
+    
+ 

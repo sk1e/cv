@@ -2,6 +2,15 @@ doctype html
 
 include ./blocks/title.pug
 include ./blocks/skill.pug
+include ./blocks/compound-list-item.pug
+
+mixin pseudotext()
+  p 
+    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+    | commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+    | penatibus et magnis dis parturient montes, nascetur ridiculus
+    | mus. Donec quam felis, ultricies nec, pellentesque.
+
 html(lang="en")
   head
   body
@@ -57,3 +66,21 @@ html(lang="en")
       .cv__column.cv__column_right
         section.section
           +title("education")
+          ul
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext              
+        section.section
+          +title("experience")
+          ul
+            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+              +pseudotext
+            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+              +pseudotext
+            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+              +pseudotext
