@@ -1,0 +1,19 @@
+- 
+  const classes = {
+    "photoshop" : "photoshop",
+    "illustrator" : "illustrator",
+    "indesign" : "indesign",
+    "dreamweaver" : "dreamweaver",
+    "after effects" : "after-effects",
+    "html&css3" : "htmlcss"  
+  }
+
+mixin software-list__column(... items)
+  .software-list__column
+    each item in items
+      .software-list__column-item      
+        span.software-list__column-item-name= item
+        .rectangle-progress          
+          div.rectangle-progress__complete(class="rectangle-progress__complete_" + classes[item])
+    
+    

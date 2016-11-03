@@ -14,3 +14,7 @@ require('./blocks/circle-progress.styl');
 require('./blocks/compound-list-item.styl');
 require('./icons.styl');
 require('./global.styl');
+
+
+require('./blocks/rectangle-progress.styl');
+require('./blocks/software-list.styl');

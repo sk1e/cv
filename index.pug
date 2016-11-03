@@ -3,6 +3,7 @@ doctype html
 include ./blocks/title.pug
 include ./blocks/skill.pug
 include ./blocks/compound-list-item.pug
+include ./blocks/software-list.pug
 
 mixin pseudotext()
   p 
@@ -13,6 +14,8 @@ mixin pseudotext()
 
 html(lang="en")
   head
+    meta(charset="utf-8")
+    title CV
   body
     article.cv
       .cv__column.cv__column_left
@@ -66,21 +69,29 @@ html(lang="en")
       .cv__column.cv__column_right
         section.section
           +title("education")
-          ul
-            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-              +pseudotext
-            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-              +pseudotext
-            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-              +pseudotext
-            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-              +pseudotext              
+          .section__body
+            ul
+              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+                +pseudotext
+              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+                +pseudotext
+              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+                +pseudotext
+              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+                +pseudotext              
         section.section
           +title("experience")
-          ul
-            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
-              +pseudotext
-            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
-              +pseudotext
-            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
-              +pseudotext
+          .section__body
+            ul
+              +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+                +pseudotext
+              +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+                +pseudotext
+              +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+                +pseudotext
+        section.section
+          +title("software")
+          .section__body
+            .software-list
+              +software-list__column("photoshop", "illustrator", "indesign")
+              +software-list__column("dreamweaver", "after effects", "html&css3")
