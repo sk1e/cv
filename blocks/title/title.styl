@@ -1,16 +1,9 @@
-@require "../mixins/circular-background.styl"
+@require "../circular-background/circular-background.styl"
 
 .title
   display flex
   align-items center
-  
-  &__icon-box    
-    display flex
-    flex-direction column
-    justify-content center 
-    circular-background(115px, 111px, 5px, 1px)
-    
-
+      
   &__text
     display flex    
     align-items center
@@ -18,8 +11,7 @@
     color cv-theme-color
     font-size 60px
     text-transform uppercase
-    margin 0 20px
-
+    margin 10px 20px 0px 20px
 
   &__line
     flex 1    
@@ -27,4 +19,3 @@
     height 8px
     width 100%
     
-   

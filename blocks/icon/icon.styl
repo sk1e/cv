@@ -1,0 +1,30 @@
+@import 'sprite.styl'
+@import '../../colors.styl'
+@import '../circular-background/circular-background.styl'
+
+.icon
+  display flex
+  flex-direction column
+  justify-content center 
+  circular-background(115px, 111px, 5px, 1px)
+  
+  &__image
+    margin auto
+    
+    &_profile
+      sprite($user)
+      
+    &_contact
+      sprite($phone)
+      
+    &_skills
+      sprite($lamp)
+      
+    &_education
+      sprite($star)
+      
+    &_experience
+      sprite($case)
+      
+    &_software
+      sprite($computer)

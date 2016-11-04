@@ -1,11 +1,11 @@
 'use strict'
 
 
-var path = require('path');
-var NpmInstallPlugin = require('npm-install-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var SpritesmithPlugin = require('webpack-spritesmith');
+const path = require('path');
+const NpmInstallPlugin = require('npm-install-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   entry: './cv.js',
@@ -30,12 +30,12 @@ module.exports = {
         new ExtractTextPlugin('[name].css', {allChunks: true}),
         new SpritesmithPlugin({
             src: {
-                cwd: path.resolve(__dirname, './icons'),
+                cwd: path.resolve(__dirname, './blocks/icon/icons'),
                 glob: '*.png'
             },
             target: {
-                image: path.resolve(__dirname, 'sprite.png'),
-                css: path.resolve(__dirname, 'sprite.styl')
+                image: path.resolve(__dirname, 'blocks/icon/sprite.png'),
+                css: path.resolve(__dirname, 'blocks/icon/sprite.styl')
             },
             apiOptions: {
                 cssImageRef: "sprite.png"

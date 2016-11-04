@@ -1,27 +1,32 @@
-@require "../colors.styl"
+@require "../../colors.styl"
 
 .compound-list-item
   display flex
   list-style none
+  
   &__marker
     width 30px
     height 30px
     border-radius 50%
     background black
-    margin-left -24px
     margin-right 32px
     margin-top 5px
+    
   &__title
     font-size 40px
     text-transform uppercase
     font-weight bold
+    
     &_education
       color cv-theme-color
+      
   &__date
     font-size 40px
     padding-left 20px;
+    
   &__subtitle
     font-size 40px
     text-transform uppercase
+    
   &__body
     margin-top -20px

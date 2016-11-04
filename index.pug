@@ -1,9 +1,9 @@
 doctype html
 
-include ./blocks/title.pug
-include ./blocks/skill.pug
-include ./blocks/compound-list-item.pug
-include ./blocks/software-list.pug
+include ./blocks/title/title.pug
+include ./blocks/skill/skill.pug
+include ./blocks/compound-list-item/compound-list-item.pug
+include ./blocks/software-list/software-list.pug
 
 mixin pseudotext()
   p 
@@ -18,7 +18,7 @@ html(lang="en")
     title CV
   body
     article.cv
-      .cv__column.cv__column_left
+      .cv__left-column
         .photo
         .author        
           .author__name name here
@@ -66,7 +66,7 @@ html(lang="en")
             +skill("teamwork", 11)
             +skill("innovate", 6)
             +skill("communication", 11)
-      .cv__column.cv__column_right
+      .cv__right-column
         section.section
           +title("education")
           .section__body
