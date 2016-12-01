@@ -1,3 +1,10 @@
+mixin contact-table
+  table.contact-table
+    +contact-table-row('Address', 'Main Street, City.')
+    +contact-table-row('e-mail', 'contact@domain.com')
+    +contact-table-row('phone', '555-555-555')
+    +contact-table-row('website', 'www.yourweb.com')
+
 mixin contact-table-row(header, cell)
   tr.contact-table__row
     th.contact-table__header= header

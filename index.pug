@@ -42,11 +42,7 @@ html(lang="en")
              | quis, feugiat a, tellus. Phasellus viverra nulla ut metus
              | varius laoreet. Quisque rutrum.
         +section('contact')
-          table.contact-table
-            +contact-table-row('Address', 'Main Street, City.')
-            +contact-table-row('e-mail', 'contact@domain.com')
-            +contact-table-row('phone', '555-555-555')
-            +contact-table-row('website', 'www.yourweb.com')
+          +contact-table
         +section('skills')
           +skill("creative", 9)
           +skill("teamwork", 11)
@@ -72,6 +68,4 @@ html(lang="en")
             +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
               +pseudotext
         +section('software')
-          .software-list
-            +software-list__column("photoshop", "illustrator", "indesign")
-            +software-list__column("dreamweaver", "after effects", "html&css3")
+          +software-list
