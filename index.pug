@@ -4,6 +4,7 @@ include ./blocks/title/title.pug
 include ./blocks/skill/skill.pug
 include ./blocks/compound-list-item/compound-list-item.pug
 include ./blocks/software-list/software-list.pug
+include ./blocks/contact-table/contact-table.pug
 
 mixin pseudotext()
   p 
@@ -47,18 +48,10 @@ html(lang="en")
           +title("contact")
           .section__body
             table.contact-table
-              tr.contact-table__row
-                th.contact-table__header Address
-                td.contact-table__cell Main Street, City.
-              tr.contact-table__row
-                th.contact-table__header e-mail
-                td.contact-table__cell contact@domain.com
-              tr.contact-table__row
-                th.contact-table__header phone
-                td.contact-table__cell 555-555-555
-              tr.contact-table__row
-                th.contact-table__header website
-                td.contact-table__cell www.yourweb.com
+              +contact-table-row('Address', 'Main Street, City.')
+              +contact-table-row('e-mail', 'contact@domain.com')
+              +contact-table-row('phone', '555-555-555')
+              +contact-table-row('website', 'www.yourweb.com')
         section.section
           +title("skills")
           .section__body

@@ -1,8 +1,5 @@
-'use strict'
-
 
 const path = require('path');
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
@@ -25,7 +22,6 @@ module.exports = {
         modulesDirectories: ["web_modules", "node_modules", "icons"]
     },
     plugins: [
-        new NpmInstallPlugin(),
         new HtmlWebpackPlugin({template: "index.pug"}),
         new ExtractTextPlugin('[name].css', {allChunks: true}),
         new SpritesmithPlugin({
