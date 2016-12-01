@@ -5,6 +5,8 @@ include ./blocks/skill/skill.pug
 include ./blocks/compound-list-item/compound-list-item.pug
 include ./blocks/software-list/software-list.pug
 include ./blocks/contact-table/contact-table.pug
+include ./blocks/section/section.pug
+include ./blocks/author/author.pug
 
 mixin pseudotext()
   p 
@@ -21,70 +23,55 @@ html(lang="en")
     article.cv
       .cv__left-column
         .photo
-        .author        
-          .author__name name here
-          .author__surname surname
-          .author__profession graphic designer          
-        section.section
-          +title("profile")
-          .section__body
-            p
-             | Lorem ipsum dolor sit amet, consectetuer adipiscing
-             | elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-             | msociis natoque penatibus et magnis dis parturient montes,
-             | nascetur ridiculus mus. Donec quam felis, ultricies nec,
-             | pellentesque eu, pretium quis, sem. Nulla consequat massa
-             | quis enim. Donec pede justo, fringilla vel, aliquet nec,
-             | vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-             | a, venenatis vitae, justo. Nullam dictum felis eu 
-             b 
-               | pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-               | elementum semper nisi. Aenean vulputate eleifend
-               | tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-               | eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
-               | quis, feugiat a, tellus. Phasellus viverra nulla ut metus
-               | varius laoreet. Quisque rutrum.
-        section.section
-          +title("contact")
-          .section__body
-            table.contact-table
-              +contact-table-row('Address', 'Main Street, City.')
-              +contact-table-row('e-mail', 'contact@domain.com')
-              +contact-table-row('phone', '555-555-555')
-              +contact-table-row('website', 'www.yourweb.com')
-        section.section
-          +title("skills")
-          .section__body
-            +skill("creative", 9)
-            +skill("teamwork", 11)
-            +skill("innovate", 6)
-            +skill("communication", 11)
+        +author('name here', 'surname', 'graphic designer')
+        +section('profile')
+          p
+           | Lorem ipsum dolor sit amet, consectetuer adipiscing
+           | elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+           | msociis natoque penatibus et magnis dis parturient montes,
+           | nascetur ridiculus mus. Donec quam felis, ultricies nec,
+           | pellentesque eu, pretium quis, sem. Nulla consequat massa
+           | quis enim. Donec pede justo, fringilla vel, aliquet nec,
+           | vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+           | a, venenatis vitae, justo. Nullam dictum felis eu 
+           b 
+             | pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+             | elementum semper nisi. Aenean vulputate eleifend
+             | tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+             | eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
+             | quis, feugiat a, tellus. Phasellus viverra nulla ut metus
+             | varius laoreet. Quisque rutrum.
+        +section('contact')
+          table.contact-table
+            +contact-table-row('Address', 'Main Street, City.')
+            +contact-table-row('e-mail', 'contact@domain.com')
+            +contact-table-row('phone', '555-555-555')
+            +contact-table-row('website', 'www.yourweb.com')
+        +section('skills')
+          +skill("creative", 9)
+          +skill("teamwork", 11)
+          +skill("innovate", 6)
+          +skill("communication", 11)
       .cv__right-column
-        section.section
-          +title("education")
-          .section__body
-            ul
-              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-                +pseudotext
-              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-                +pseudotext
-              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-                +pseudotext
-              +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
-                +pseudotext              
-        section.section
-          +title("experience")
-          .section__body
-            ul
-              +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
-                +pseudotext
-              +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
-                +pseudotext
-              +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
-                +pseudotext
-        section.section
-          +title("software")
-          .section__body
-            .software-list
-              +software-list__column("photoshop", "illustrator", "indesign")
-              +software-list__column("dreamweaver", "after effects", "html&css3")
+        +section("education")
+          ul
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext
+            +compound-list-item("master degree", "Feb 2011 - Jun 2014", "university name")(title_class="compound-list-item__title_education")
+              +pseudotext              
+        +section('experience')
+          ul
+            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+              +pseudotext
+            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+              +pseudotext
+            +compound-list-item("company name", "Feb 2011 - Jun 2014", "your job here")
+              +pseudotext
+        +section('software')
+          .software-list
+            +software-list__column("photoshop", "illustrator", "indesign")
+            +software-list__column("dreamweaver", "after effects", "html&css3")
